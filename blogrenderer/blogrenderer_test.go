@@ -13,7 +13,7 @@ func TestRender(t *testing.T) {
 			Title:       "hello world",
 			Body:        "This is a post",
 			Description: "This is a description",
-			Tags:        []string{"go, tdd"},
+			Tags:        []string{"go", "tdd"},
 		}
 	)
 
@@ -26,7 +26,7 @@ func TestRender(t *testing.T) {
 		}
 
 		got := buf.String()
-		want := `<h1>hello world</h1>`
+		want := `<h1>hello world</h1><p>This is a description</p>Tags: <ul><li>go</li><li>tdd</li></ul>`
 
 		if got != want {
 			t.Errorf("got '%s' want '%s'", got, want)
